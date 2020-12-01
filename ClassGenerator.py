@@ -25,13 +25,13 @@ def startClass(module="myModule", name="myClass", parent="", attributes=[]):
         for att in attributes:
             createClass.write("\n")
             first = att[0]
-            createClass.write("\tdef get" + att.replace(first, first.upper()) + "(self):\n")
+            createClass.write("\tdef get" + att.replace(first, first.upper(), 1) + "(self):\n")
             createClass.write("\t\treturn self.__" + att + "\n")
             
         for att in attributes:
             createClass.write("\n")
             first = att[0]
-            createClass.write("\tdef set" + att.replace(first, first.upper()) + "(self, " + att + "):\n")
+            createClass.write("\tdef set" + att.replace(first, first.upper(), 1) + "(self, " + att + "):\n")
             createClass.write("\t\tself.__" + att + " = " + att +"\n")
         
     
