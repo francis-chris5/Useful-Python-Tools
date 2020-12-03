@@ -55,7 +55,7 @@ def startClass(module="myModule", name="myClass", parent="", attributes=[], dire
 # A method to generate the method header and attach it to an object or module.\n
 # Currently this is only set up to work if there is only one single class per file or a module of non-class methods to import
 # @param name A name for the function to be added to an object for either a 2d or 3d game
-# @param module The module (a.k.a. python file) to add the function into, if omitted it will be added directly to the module containing the main game object
+# @param module The module (a.k.a. python file) to add the function into
 # @param parameters A list of strings representing the parameters that will be needed for the method
 def startFunction(name="myFunction", module="myModule", parameters=[], directory=""):
 	if not path.exists(directory):
