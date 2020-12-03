@@ -6,7 +6,7 @@ Created on Tue Dec  1 10:07:27 2020
 """
 
 
-from os import path
+from os import path, makedirs
 
 ##
 # A method to create the start for a python class structure with getters and setters for all the attributes.\n
@@ -14,8 +14,11 @@ from os import path
 # @param name The name for this class
 # @param parent The class the new class will inherit from if applicable
 # @param attributes[] A list of strings representing all the desired attributes for the class. Each element in this list will be added to the __init__ constructor and have a getter and setter method generated.
-def startClass(module="myModule", name="myClass", parent="", attributes=[]):
-	with open(module + ".py", mode="a") as createClass:
+# @param directory The directory to write the objects to, will be created if it does not already exist
+def startClass(module="myModule", name="myClass", parent="", attributes=[], directory=""):
+	if not path.exists(directory):
+		makedirs(directory)
+	with open(directory + "\\" + module + ".py", mode="a") as createClass:
 		createClass.write("\n")
 		createClass.write("\n")
 		createClass.write("\n")
@@ -46,22 +49,25 @@ def startClass(module="myModule", name="myClass", parent="", attributes=[]):
 			createClass.write("\tdef set" + att.replace(first, first.upper(), 1) + "(self, " + att + "):\n")
 			createClass.write("\t\tself.__" + att + " = " + att +"\n")
         
+		
 
 ##
 # A method to generate the method header and attach it to an object or module.\n
-# Currently this is only set up to work if either: there is only one single class per file (will only add to last class in file), or there is just a module of non-class methods to import
-# @param name A name for the function to be added to an object
-# @param module The module (a.k.a. python file) to add the function into
+# Currently this is only set up to work if there is only one single class per file or a module of non-class methods to import
+# @param name A name for the function to be added to an object for either a 2d or 3d game
+# @param module The module (a.k.a. python file) to add the function into, if omitted it will be added directly to the module containing the main game object
 # @param parameters A list of strings representing the parameters that will be needed for the method
-def startFunction(name="myFunction", module="myModule", parameters=[]):
+def startFunction(name="myFunction", module="myModule", parameters=[], directory=""):
+	if not path.exists(directory):
+		makedirs(directory)
 	containsObjects = False
-	if path.exists(module+".py"):
-		with open(module + ".py", mode="r") as checkScript:
+	if path.exists(directory + "\\" + module+".py"):
+		with open(directory + "\\" + module + ".py", mode="r") as checkScript:
 			for line in checkScript:
 				if "class" in line:
 					containsObjects = True
 		if containsObjects:
-			with open(module + ".py", mode="a") as addFunc:
+			with open(directory + "\\" + module + ".py", mode="a") as addFunc:
 				addFunc.write("\n")
 				addFunc.write("\n")
 				addFunc.write("\n")
@@ -80,7 +86,7 @@ def startFunction(name="myFunction", module="myModule", parameters=[]):
 				addFunc.write("\t\treturn #enter the return or delete this line")
 				addFunc.write("\n")
 		else:
-			with open(module + ".py", mode="a") as addFunc:
+			with open(directory + "\\" + module + ".py", mode="a") as addFunc:
 				addFunc.write("\n")
 				addFunc.write("\n")
 				addFunc.write("\n")
@@ -97,7 +103,7 @@ def startFunction(name="myFunction", module="myModule", parameters=[]):
 				addFunc.write("\treturn #enter the return or delete this line")
 				addFunc.write("\n")
 	else:
-		with open(module + ".py", mode="a") as addFunc:
+		with open(directory + "\\" + module + ".py", mode="a") as addFunc:
 				addFunc.write("\n")
 				addFunc.write("\n")
 				addFunc.write("\n")
