@@ -7,9 +7,9 @@ Created on Thu Dec  3 13:45:27 2020
 
 import ClassGenerator
 	# put functions in a module without class structures
-#ClassGenerator.startFunction()
+ClassGenerator.startFunction()
 
-#ClassGenerator.startFunction(parameters=["i", "j", "k"])
+ClassGenerator.startFunction(parameters=["i", "j", "k"])
 
 
  ####################################################
@@ -23,8 +23,8 @@ import ClassGenerator
 
 
 
-ClassGenerator.startClass(attributes=["x", "y", "z"])
+#ClassGenerator.startClass(attributes=["x", "y", "z"])
 
-ClassGenerator.startFunction()
+#ClassGenerator.startFunction()
 
-ClassGenerator.startFunction(parameters=["i", "j", "k"])
+#ClassGenerator.startFunction(parameters=["i", "j", "k"])
