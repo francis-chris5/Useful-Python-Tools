@@ -52,7 +52,7 @@ def startClass(module="myModule", name="myClass", parent="", attributes=[]):
 # Currently this is only set up to work if either: there is only one single class per file (will only add to last class in file), or there is just a module of non-class methods to import
 # @param name A name for the function to be added to an object
 # @param module The module (a.k.a. python file) to add the function into
-# @param parameters A list of strings representing the parameters that will be need for the method
+# @param parameters A list of strings representing the parameters that will be needed for the method
 def startFunction(name="myFunction", module="myModule", parameters=[]):
 	containsObjects = False
 	if path.exists(module+".py"):
