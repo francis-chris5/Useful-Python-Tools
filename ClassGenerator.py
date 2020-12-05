@@ -25,7 +25,11 @@ def startClass(module="myModule", name="myClass", parent="", attributes=[], dire
 		createClass.write("class " + name + "(" + parent + "):\n")
 		createClass.write("\tdef __init__(self")
 		if len(attributes) == 0:
-			createClass.write("):")
+			createClass.write("):\n")
+			if parent != "":
+				createClass.write("\t\tsuper().__init__()\n")
+			else:
+				createClass.write("\t\tpass")
 		else:
 			createClass.write(", ") 
 		for att in attributes:
