@@ -22,6 +22,6 @@ A method to check a given python script and produce a list of all imported libra
     
 The intended usage of this is to ease the task of labelng non-core-Python-API dependencies in a project manifest.
     
-Coming Soon: a way to compare this list agains a particular version of Python to determine what may need installed along with the release of the project, though it will be quite some time before this need actually makes it into my current project.
+Coming Soon: a way to compare this list against a particular version of Python to determine what may need installed along with the release of the project, though it will be quite some time before this need actually makes it into my current project.
     
 
