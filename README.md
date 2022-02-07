@@ -25,3 +25,7 @@ The intended usage of this is to ease the task of labelng non-core-Python-API de
 Coming Soon: a way to compare this list against a particular version of Python to determine what may need installed along with the release of the project, though it will be quite some time before this need actually makes it into my current project.
     
 
+
+<h3>webgen</h3>
+
+A script to add docstring comments into a python script so that it's ready to run through a documentation generator. The course where I created this for had students using pdoc3, but it generates the docstrings in "Google Notation" for python documentation generators.
