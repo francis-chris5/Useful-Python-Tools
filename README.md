@@ -30,7 +30,8 @@ Coming Soon: a way to compare this list against a particular version of Python t
 
 A script to add docstring comments into a python script so that it's ready to run through a documentation generator. The course where I created this for had students using pdoc3, but it generates the docstrings in "Google Notation" for python documentation generators.
 
-Here's a video walkthrough for WebGen I made for the students in the course it was originally created for.
+Here's a video walkthrough for WebGen I made for the students in the course it was originally created for: https://www.youtube.com/watch?v=ccnf5onD540 
+
 
 
 
